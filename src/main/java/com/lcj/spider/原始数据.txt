@@ -1,0 +1,127 @@
+<li>
+	<div class="text-clip">
+		<a href="/schoolinfo/jobfair/89337bb7q866d646fdzb561B818886cb537e.htm" class="a-main font16" target="_blank"
+			rel="noopener noreferrer">
+
+			<span class="badge" style="background-color: #439a43">
+
+
+
+
+                    专场
+
+            </span>
+			乐金显示光电科技（中国）有限公司宣讲会
+		</a>
+	</div>
+	<div class="text-777 text-clip mg-tb-5">
+
+		<i class="fa fa-map-marker"></i>&nbsp;雁山校区校园招聘中心宣讲室（一）
+
+	</div>
+	<div class="text-777 text-clip">
+		<i class="fa fa-clock-o"></i>&nbsp;2021-11-01&nbsp;18:30~~21:30
+	</div>
+</li>
+
+<li>
+	<div class="text-clip">
+		<a href="/schoolinfo/jobfair/95603c17qd69364b5czadaaBe404a8d51b35.htm" class="a-main font16" target="_blank"
+			rel="noopener noreferrer">
+
+			<span class="badge" style="background-color: #439a43">
+
+
+
+
+                    专场
+
+            </span>
+			奥海科技2022届“探海班”专场宣讲会
+		</a>
+	</div>
+	<div class="text-777 text-clip mg-tb-5">
+
+		<i class="fa fa-map-marker"></i>&nbsp;雁山校区校园招聘中心宣讲室（二）
+
+	</div>
+	<div class="text-777 text-clip">
+		<i class="fa fa-clock-o"></i>&nbsp;2021-11-01&nbsp;18:30~~21:30
+	</div>
+</li>
+
+<li>
+	<div class="text-clip">
+		<a href="/schoolinfo/jobfair/5b339abeq8bc564843zb4a3B42f2086f7485.htm" class="a-main font16" target="_blank"
+			rel="noopener noreferrer">
+
+			<span class="badge" style="background-color: #439a43">
+
+
+
+
+                    专场
+
+            </span>
+			广州拓客商贸有限公司专场招聘会
+		</a>
+	</div>
+	<div class="text-777 text-clip mg-tb-5">
+
+		<i class="fa fa-map-marker"></i>&nbsp;雁山校区校园招聘中心宣讲室（二）
+
+	</div>
+	<div class="text-777 text-clip">
+		<i class="fa fa-clock-o"></i>&nbsp;2021-11-01&nbsp;15:00~~17:00
+	</div>
+</li>
+
+<li>
+	<div class="text-clip">
+		<a href="/schoolinfo/jobfair/55552dadq8a3c64f6fza99eB997117f34f27.htm" class="a-main font16" target="_blank"
+			rel="noopener noreferrer">
+
+			<span class="badge" style="background-color: #439a43">
+
+
+
+
+                    专场
+
+            </span>
+			深圳市乐其网络科技有限公司
+		</a>
+	</div>
+	<div class="text-777 text-clip mg-tb-5">
+
+		<i class="fa fa-map-marker"></i>&nbsp;雁山校区校园招聘中心宣讲室（一）
+
+	</div>
+	<div class="text-777 text-clip">
+		<i class="fa fa-clock-o"></i>&nbsp;2021-11-01&nbsp;14:00~~16:00
+	</div>
+</li>
+
+<li>
+	<div class="text-clip">
+		<a href="/schoolinfo/jobfair/5649e972qa00764169z82cdB48c7e8f8a824.htm" class="a-main font16" target="_blank"
+			rel="noopener noreferrer">
+
+			<span class="badge" style="background-color: #439a43">
+
+
+
+                    宣讲会
+
+
+            </span>
+			珠海方正2022届秋季校园招聘
+		</a>
+	</div>
+	<div class="text-777 text-clip mg-tb-5">
+
+	</div>
+	<div class="text-777 text-clip">
+		<i class="fa fa-clock-o"></i>&nbsp;2021-11-01&nbsp;10:00~~11:00
+	</div>
+</li>

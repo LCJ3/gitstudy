@@ -1,14 +1,16 @@
-package com.lcj.spider;
+package com.lcj.util;
 
 import com.lcj.constant.CommonConst;
-import com.lcj.util.CommonDateUtil;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -16,7 +18,7 @@ import java.util.Map;
  * author lichunjiang
  * createTime 2021/10/10 11:00
  **/
-public class JsoupSpider {
+public class JsoupSpiderUtil {
     /**
      * description 爬取桂工就业网主要方法
      * param [dateValue, url, map, cookie]
@@ -46,15 +48,31 @@ public class JsoupSpider {
        //System.out.println(body.toString());
         Elements elements=body.getElementsByTag("li");
         //element.select(".text-777.text-clip.mg-tb-5").text()
+        StringBuffer returnData=new StringBuffer(CommonDateUtil.changeToMonthDay(dateValue));
         //字符串拼接比较多
-        System.out.println(CommonDateUtil.changeToMonthDay(dateValue));
+        returnData.append("\n");
+//        System.out.println(CommonDateUtil.changeToMonthDay(dateValue)+"\r\n");
         for (Element element : elements) {
-                    System.out.println(""+"【"+(Integer.parseInt(String.valueOf(elements.indexOf(element)))+1)+"】"+JsoupSpider.getLectureName(element)+""
+//                    System.out.println(""+"【"+(Integer.parseInt(String.valueOf(elements.indexOf(element)))+1)+"】"+ JsoupSpiderUtil.getLectureName(element)+""
+//                        +element.getElementsByTag("div").select(".text-777.text-clip").text()+
+//                        " "+CommonConst.URL_PRE+element.select(".a-main").attr("href"));
+            returnData.append("【"+(Integer.parseInt(String.valueOf(elements.indexOf(element)))+1)+"】"+ JsoupSpiderUtil.getLectureName(element)+""
                         +element.getElementsByTag("div").select(".text-777.text-clip").text()+
-                        " "+CommonConst.URL_PRE+element.select(".a-main").attr("href"));
+                       " "+CommonConst.URL_PRE+element.select(".a-main").attr("href")+"\n");
         }
-        //System.out.println(doc.toString());
-        return doc.toString();
+        //创建存储数据的文件
+        File file =new File("D:\\getData.txt");
+        //创建一个用于操作文件的字节输出流对象。一创建就必须明确数据存储目的地。
+        //输出流目的是文件，会自动创建，如果文件存在，则覆盖。
+        FileOutputStream fos=new FileOutputStream(file);
+        //调用父类中的write方法
+        byte[] data=returnData.toString().getBytes();
+        fos.write(data);
+        //关闭流资源
+        fos.close();
+
+        System.out.println(returnData.toString());
+        return returnData.toString();
     }
     /**
      * description 去除“专场”、“招聘会”字样
@@ -72,8 +90,9 @@ public class JsoupSpider {
             return returnText.substring(4);
         }
     }
-//    public static void main(String[] args) throws IOException {
-//        Map map = new HashMap();
-//        JsoupSpider.httpPost("2021-11-01", CommonConst.SPIDER_URL, map, CommonConst.COOKIE_VALUE);
-//    }
+
+     public static void main(String[] args) throws IOException {
+    Map map = new HashMap();
+    JsoupSpiderUtil.httpPost("2021-11-02", CommonConst.SPIDER_URL, map, CommonConst.COOKIE_VALUE);
+}
 }

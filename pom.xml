@@ -53,9 +53,12 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                    <outputDirectory>D:\Users\Administrator\Desktop\getData</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
+        <!-- 自定义打包的包名称 -->
+        <finalName>getData--v1.0</finalName>
     </build>
 
 </project>

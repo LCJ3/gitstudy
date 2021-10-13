@@ -36,6 +36,7 @@ public class JsoupSpiderUtil {
                 con.data(entry.getKey(), entry.getValue());
             }
         }
+        //mvn package -Dmaven.test.skip=true
         //插入cookie（头文件形式）
         con.data(CommonConst.DATE_NAME, dateValue);
         con.header(CommonConst.COOKIE_NAME, cookie);
@@ -48,17 +49,33 @@ public class JsoupSpiderUtil {
        //System.out.println(body.toString());
         Elements elements=body.getElementsByTag("li");
         //element.select(".text-777.text-clip.mg-tb-5").text()
-        StringBuffer returnData=new StringBuffer(CommonDateUtil.changeToMonthDay(dateValue));
+        StringBuffer returnData=new StringBuffer(CommonDateUtil.changeToMonthDay(dateValue)+" ");
+
         //字符串拼接比较多
-        returnData.append("\n");
 //        System.out.println(CommonDateUtil.changeToMonthDay(dateValue)+"\r\n");
         for (Element element : elements) {
+            // \r空格
+            // \n换行
+            returnData.append("\n");
 //                    System.out.println(""+"【"+(Integer.parseInt(String.valueOf(elements.indexOf(element)))+1)+"】"+ JsoupSpiderUtil.getLectureName(element)+""
 //                        +element.getElementsByTag("div").select(".text-777.text-clip").text()+
 //                        " "+CommonConst.URL_PRE+element.select(".a-main").attr("href"));
-            returnData.append("【"+(Integer.parseInt(String.valueOf(elements.indexOf(element)))+1)+"】"+ JsoupSpiderUtil.getLectureName(element)+""
-                        +element.getElementsByTag("div").select(".text-777.text-clip").text()+
-                       " "+CommonConst.URL_PRE+element.select(".a-main").attr("href")+"\n");
+            //企业名
+            returnData.append("【"+(Integer.parseInt(String.valueOf(elements.indexOf(element)))+1)+"】"+JsoupSpiderUtil.getLectureName(element));
+            returnData.append("\n");
+            //公司链接
+            returnData.append(CommonConst.URL_PRE+element.select(".a-main").attr("href"));
+            returnData.append("\n");
+            //地点
+            String temp=element.select("div.text-777.text-clip.mg-tb-5").text().replace(Jsoup.parse("&nbsp;").text(), "");
+            returnData.append(temp);
+            //时间
+            //时间里面包括地点，把地点给取消掉
+            returnData.append("\n");
+            String s1=element.select("div.text-777.text-clip").text().replace(Jsoup.parse("&nbsp;").text(), " ");
+            String s2=s1.replace(temp,"").replace(" ","");
+            returnData.append(s2.substring(0,10)+"  "+s2.substring(10,s2.length()));
+
         }
         //创建存储数据的文件
         File file =new File("D:\\getData.txt");
@@ -71,7 +88,7 @@ public class JsoupSpiderUtil {
         //关闭流资源
         fos.close();
 
-        System.out.println(returnData.toString());
+        System.out.println(returnData);
         return returnData.toString();
     }
     /**
@@ -93,6 +110,6 @@ public class JsoupSpiderUtil {
 
      public static void main(String[] args) throws IOException {
     Map map = new HashMap();
-    JsoupSpiderUtil.httpPost("2021-11-02", CommonConst.SPIDER_URL, map, CommonConst.COOKIE_VALUE);
+    JsoupSpiderUtil.httpPost("2021-10-14", CommonConst.SPIDER_URL, map, CommonConst.COOKIE_VALUE);
 }
 }
